@@ -4,19 +4,18 @@
 # Full description of class gdash is in the README.
 #
 class gdash (
+  $package_ensure = 'present',
+  $package_path   = $gdash::defaults::package_path,
   $config_ensure  = 'present',
   $config_options = {},
-  $package_ensure = 'installed',
-  $service_ensure = 'running',
-  $service_enable = true,
-  $service_name   = $gdash::defaults::service_name,
-  $package_name   = $gdash::defaults::package_name,
-  $config_dir     = $gdash::defaults::config_directory,
-  $config_file    = $gdash::defaults::config_file,
+  $graphite_path  = $gdash::defaults::graphite_path,
+  $graphite_host  = $gdash::defaults::graphite_host,
+  $template_path  = $gdash::defaults::template_path,
+  $whisper_path   = $gdash::defaults::whisper_path,
+
 ) inherits gdash::defaults {
   anchor { 'gdash::begin':   } ->
   class  { 'gdash::package': } ->
-  class  { 'gdash::config':  } ~>
-  class  { 'gdash::service': } ->
+  class  { 'gdash::config':  } ->
   anchor { 'gdash::end': }
 }
