@@ -19,8 +19,6 @@ This is the gdash module.
 - *config_ensure* (Default: 'present')
 - *config_options* (Default: Empty)
 - *package_ensure* (Default: 'true')
-- *service_ensure* (Default: 'running')
-- *service_enable* (Default: 'true')
 
 # Examples
 
@@ -38,8 +36,6 @@ Parameterized Installation
     config_ensure  => 'present',
     config_options => $config_options,
     package_ensure => 'true',
-    service_ensure => 'running',
-    service_enable => 'true',
   }
 
 Installation with Hiera
@@ -50,8 +46,6 @@ Installation with Hiera
   gdash::config::options:
     option: value
   gdash::package::ensure:  'true'
-  gdash::service::ensure:  'running'
-  gdash::service::enable:  'true'
 
 # License
 
@@ -62,4 +56,4 @@ Installation with Hiera
 
 # Support
 
-Please log tickets and issues at our [Projects site](https://github.com/seattle-biomed/gdash)
+Please log tickets and issues at our [Projects site](https://github.com/seattle-biomed/puppet-gdash)
