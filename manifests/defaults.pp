@@ -4,9 +4,9 @@
 #
 class gdash::defaults {
 
-  $package_path  = '/opt/gdash'
-  $graphite_path = '/opt/graphite'
-  $graphite_host = "graphite.${::fqdn}"
+  $package_path   = '/opt/gdash'
+  $graphite_path  = '/opt/graphite'
+  $graphite_host  = "graphite.${::fqdn}"
   $template_path  = '/opt/gdash/graph_templates'
   $whisper_path   = '/opt/graphite/storage/whisper'
 
