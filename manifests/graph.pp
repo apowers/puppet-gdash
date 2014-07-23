@@ -10,6 +10,7 @@ define gdash::graph (
   $dashboard    = $::fqdn,
   $ymin         = undef,
   $ymax         = undef,
+  $hide_legend  = false,
   $fields       = {},
 ) {
   Gdash::Dashboard[$dashboard] -> Gdash::Graph[$name]
@@ -26,9 +27,10 @@ define gdash::graph (
     'vtitle'      => $vtitle,
     'graph_name'  => $graph_title,
     'description' => $description,
+    'hide_legend' => $hide_legend,
   }
 
-  file { "${dashboard_path}/${graph_title}.graph":
+  file { "${dashboard_path}/${name}.graph":
     ensure  => 'file',
     mode    => '0644',
     content => template('gdash/graph.erb'),

@@ -6,9 +6,9 @@ define gdash::dashboard(
   $graph_properties = {},
   $graph_source     = undef,
 ) {
-  Gdash::Category[$category] -> Gdash::Dashboard[$title]
+  Gdash::Category[$category] -> Gdash::Dashboard[$name]
 
-  $dashboard_path = "${gdash::template_path}/${category}/${title}"
+  $dashboard_path = "${gdash::template_path}/${category}/${name}"
 
   if $graph_source {
     file { $dashboard_path:
