@@ -1,7 +1,8 @@
 ---
 :name:        <%= @title %>
 :description: <%= @description %>
-
+<% if @graphite_host && @graphite_host != 'undef' %>:graphite: <%= @graphite_host %>
+<% end -%>
 :graph_properties:
 <% @graph_properties.each do |prop, val| -%>
   :<%= prop %>: <%= val %>
