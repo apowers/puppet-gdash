@@ -5,6 +5,7 @@ define gdash::dashboard(
   $description      = '',
   $graph_properties = {},
   $graph_source     = undef,
+  $graphite_host    = undef,
 ) {
   Gdash::Category[$category] -> Gdash::Dashboard[$name]
 
