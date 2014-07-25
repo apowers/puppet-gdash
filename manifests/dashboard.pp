@@ -3,7 +3,7 @@
 define gdash::dashboard(
   $category         = 'servers',
   $description      = '',
-  $graph_properties = {},
+  $graph_properties = { 'host' => $name },
   $graph_source     = undef,
   $graphite_host    = undef,
 ) {
