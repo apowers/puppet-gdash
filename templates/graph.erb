@@ -14,7 +14,9 @@ ymax <%= @data['ymax'] %>
 
 <% @fields.sort.each do |name,f| -%>
 field :<%= name %>,
+<% if f['scale'] && f['scale'].to_i != 0 %>
   :scale => <%= f['scale'].to_f %>,
+<% end -%>
 <% if f['color'] != 'undef' -%>
   :color => '<%= f['color'] %>',
 <% end -%>
