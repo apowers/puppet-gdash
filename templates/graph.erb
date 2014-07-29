@@ -1,16 +1,8 @@
-title       '<%= @data['title'] %>'
-vtitle      '<%= @data['vtitle'] %>'
-description '<%= @data['description'] %>'
-area       :<%= @data['area'] %>
-hide_legend <%= @data['hide_legend'] %>
-
-<% if @data['ymin'] && @data['ymin'].is_a?(Fixnum) -%>
-ymin <%= @data['ymin'] %>
-<% end -%>
-<% if @data['ymax'] && @data['ymax'].is_a?(Fixnum) -%>
-ymax <%= @data['ymax'] %>
-<% end -%>
-
+<% @data.sort.each do |key,value| -%>
+<% if key == 'area' %>area :<%= value %>
+<% next %><% elsif key == 'title' %>title "<%= value %>"
+<% next %><% elsif value && value.to_s != 'undef' %><%= key %>  <%= value %>
+<% end %><% end %>
 
 <% @fields.sort.each do |name,f| -%>
 field :<%= name %>,
